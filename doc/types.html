@@ -184,9 +184,9 @@ optional_minus
   the  <a href="intrinsic.html#number"><code>number</code> function</a> to
     handle  other bases.) A number literal is an optional
     <code>-</code><small>minus sign</small>, one or more digits, an
-    optional a single <code>.</code><small>decimal point</small> followed by
+    optional <code>.</code><small>decimal point</small> followed by
     one or more digits, and an optional <code>e</code> and more digits
-    indicating scientific notation. The <code>_</code><small>underbar</small> can be inserted into a number literal as a separator..</p>
+    indicating scientific notation. The <code>_</code><small>underbar</small> can be inserted into a number literal as a separator.</p>
 <pre>-4
 0
 0.75
@@ -200,7 +200,7 @@ optional_minus
     Objects are not rigidly defined by classes. Instead, Misty's records can be
     soft and malleable until hardened to stone. Misty unifies traditional records and associative data structures. Records are unordered
     containers of key/value fields. Misty records can have fields added or removed at
-    any time. Records are initially mutable, but can be made immutable by the <code><a href="intrinsic.html#stone">stone</a></code> function. Fields can be accessed using either <a href="operators.html#dot"> dot notation</a> or <a href="operators.html#bracket"> bracket notation</a>.</p>
+    any time. Records are initially mutable, but can be made immutable by the <code><a href="intrinsic.html#stone">stone</a></code> function. Fields can be accessed using either <a href="operators.html#period"> dot notation</a> or <a href="operators.html#bracket"> bracket notation</a>.</p>
 <h3 id="record literal">Record Literal</h3>
 <p>A new record can be made with a record literal.</p>
 <p class="rule">
@@ -299,7 +299,7 @@ def object: {
 var first_name: stooge.first          # first_name is &quot;Curly&quot;
 assign first_name: null.first         # first_name is null
 assign new_stooge: record(stooge)
-assign new_stooge.first: &quot;Shemp&quot;      # new_stooge is {first: &quot;Shemp&quot;}
+assign new_stooge.first: &quot;Shemp&quot;      # new_stooge.first is &quot;Shemp&quot;
 assign last_name: new_stooge.last     # last_name is &quot;Howard&quot;</pre>
 <p>The subscript notation is similar to the dot notation, but instead of
     taking an identifier (which is used as a text) it can take an expression that produces a valid key. It can be used for dynamically making
@@ -309,8 +309,8 @@ assign last_name: new_stooge.last     # last_name is &quot;Howard&quot;</pre>
 <h6>Example:</h6>
 <pre>def stooge: {first: &quot;Curly&quot;, last: &quot;Howard&quot;}
 assign first_name: stooge[&quot;first&quot;]           # first_name is &quot;Curly&quot;
-assign stooge.first: "Jerome"                # {first: &quot;Curly&quot;, last: &quot;Howard&quot;}
-assign stooge.middle: "Lester"               # {first: &quot;Curly&quot;, middle: &quot;Lester&quot;, last: &quot;Howard&quot;}
+assign stooge.first: "Jerome"                # stooge.first is &quot;Jerome&quot;
+assign stooge.middle: "Lester"               # stooge.middle is &quot;Lester&quot;
 assign stooge[null]: &quot;Mogo on the Gogogo&quot;    # disrupt
 assign stooge: {}                            # disrupt
 </pre>
@@ -495,7 +495,7 @@ assign my_text[0]: &quot;r&quot;   # disrupt
 <p>These values are always immutable: <code>true false null</code>.</p>
 <p>Values of these types are always immutable: <code>number text function pattern</code>.</p>
 <p>Values of these types are initially mutable, but can be transformed into immutable values: <code>array record blob</code>.</p>
-<p>Objects can be made immutable by the <a href="operators.html#stone"><code>stone</code></a> intrinsic function that turns them to stone.</p>
+<p>Objects can be made immutable by the <a href="operators.html#stone(value)"><code>stone</code></a> intrinsic function that turns them to stone.</p>
 <p>The state of mutability of a value can be sensed with the <a href="intrinsic.html#stone?"><code>stone?</code></a> intrinsic function.</p>
 <p>Immutable objects are generally safer to pass to functions in subprograms that are not fully trusted.</p>
 </body>
